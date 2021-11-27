@@ -4,7 +4,8 @@ app = Flask(__name__)
 
 
 @app.route('/')
-def hello_world():
+def index():
+    print(min(map(int, input().split()), key=lambda x: (not (x % 2), x)))
     return render_template("index.html")
 
 

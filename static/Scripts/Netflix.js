@@ -1,4 +1,4 @@
-const labels = [
+const month_labels = [
     'January',
     'February',
     'March',
@@ -12,9 +12,24 @@ const labels = [
     'November',
     'December'
 ];
+const movie_labels = [
+    "Horror",
+    "Action",
+    "Comedy"
+]
 
-const data = {
-    labels: labels,
+
+const line_data = {
+    labels: month_labels,
+    datasets: [{
+        label: 'My First dataset',
+        backgroundColor: 'rgb(255, 99, 132)',
+        borderColor: 'rgb(255, 99, 132)',
+        data: [0, 10, 5, 2, 20, 30, 45],
+    }]
+};
+const pie_data = {
+    labels: movie_labels,
     datasets: [{
         label: 'My First dataset',
         backgroundColor: 'rgb(255, 99, 132)',
@@ -25,13 +40,13 @@ const data = {
 
 const configLine = {
     type: 'line',
-    data: data,
+    data: line_data,
     options: {}
 };
 
 const configPie = {
     type: 'pie',
-    data: data,
+    data: pie_data,
     options: {
         responsive: true,
         plugins: {
@@ -40,7 +55,44 @@ const configPie = {
             },
             title: {
                 display: true,
-                text: 'Chart.js Pie Chart'
+            }
+        }
+    },
+};
+
+const bar_data = {
+    labels: month_labels,
+    datasets: [{
+        label: 'My First Dataset',
+        data: [65, 59, 80, 81, 56, 55, 40],
+        backgroundColor: [
+            'rgba(255, 99, 132)',
+            'rgba(255, 159, 64)',
+            'rgba(255, 205, 86)',
+            'rgba(75, 192, 192)',
+            'rgba(54, 162, 235)',
+            'rgba(153, 102, 255)',
+            'rgba(201, 203, 207)'
+        ],
+        borderColor: [
+            'rgb(255, 99, 132)',
+            'rgb(255, 159, 64)',
+            'rgb(255, 205, 86)',
+            'rgb(75, 192, 192)',
+            'rgb(54, 162, 235)',
+            'rgb(153, 102, 255)',
+            'rgb(201, 203, 207)'
+        ],
+        borderWidth: 1
+    }]
+};
+const configBar = {
+    type: 'bar',
+    data: bar_data,
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
             }
         }
     },
@@ -52,4 +104,8 @@ const PieChart = new Chart(
 const LineChart = new Chart(
     document.getElementById('LineChart'),
     configLine
+);
+const BarChart = new Chart(
+    document.getElementById('BarChart'),
+    configBar
 );

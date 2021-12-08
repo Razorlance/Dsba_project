@@ -12,29 +12,43 @@ const month_labels = [
     'November',
     'December'
 ];
+
 const movie_labels = [
     "Horror",
     "Action",
     "Comedy"
 ]
 
-
 const line_data = {
-    labels: month_labels,
+    labels: years,
     datasets: [{
-        label: 'My First dataset',
-        backgroundColor: 'rgb(255, 99, 132)',
-        borderColor: 'rgb(255, 99, 132)',
-        data: [0, 10, 5, 2, 20, 30, 45],
+        label: 'Number of movies during each year available on Netflix',
+        backgroundColor: 'rgb(235, 35, 21,0.4)',
+        borderColor: 'rgb(235, 35, 21)',
+        data: years_data,
+        fill: true
     }]
 };
+
 const pie_data = {
-    labels: movie_labels,
+    labels: genres,
     datasets: [{
         label: 'My First dataset',
-        backgroundColor: 'rgb(255, 99, 132)',
-        borderColor: 'rgb(255, 99, 132)',
-        data: [0, 10, 5, 2, 20, 30, 45],
+        backgroundColor: [
+            'rgba(255, 99, 132)',
+            'rgba(255, 159, 64)',
+            'rgba(255, 205, 86)',
+            'rgba(75, 192, 192)',
+            'rgba(54, 162, 235)',
+            'rgba(153, 102, 255)',
+            'rgba(201, 203, 207)'],
+        borderColor: 'rgb(235, 35, 21,0)',
+        data: genres_data,
+        fill: {
+            target: 'My First dataset',
+            above: 'rgb(255, 0, 0)',   // Area will be red above the origin
+            below: 'rgb(0, 0, 255)'
+        }
     }]
 };
 
@@ -86,6 +100,7 @@ const bar_data = {
         borderWidth: 1
     }]
 };
+
 const configBar = {
     type: 'bar',
     data: bar_data,
@@ -97,14 +112,17 @@ const configBar = {
         }
     },
 };
+
 const PieChart = new Chart(
     document.getElementById('PieChart'),
     configPie
 );
+
 const LineChart = new Chart(
     document.getElementById('LineChart'),
     configLine
 );
+
 const BarChart = new Chart(
     document.getElementById('BarChart'),
     configBar

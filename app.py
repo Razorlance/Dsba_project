@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+from static.Calculations.calculations import *
 
 app = Flask(__name__)
 
@@ -20,7 +21,7 @@ def hulu_page():
 
 @app.route('/Netflix')
 def netflix_page():
-    return render_template("Netflix.html")
+    return render_template("Netflix.html", data=netflix_data)
 
 
 @app.route('/Prime')

@@ -90,12 +90,24 @@
         </div>
     </div>
     <div class="row my-4">
+        <div class="col-md-8 align-items-stretch">
+            <div class="card mb-3 p-3">
+                <div class="row g-0">
+                    <div class="col">
+                        <div class="card-body">
+                            <h4 class="card-title netflix_color">Popular directors</h4>
+                            <canvas style="padding-bottom: 4rem;" id="BarChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="col-md-4 align-items-stretch">
             <div class="card mb-3 p-3">
                 <div class="row g-0">
                     <div class="col">
                         <div class="card-body">
-                            <h4 class="card-title netflix_color">Top director</h4>
+                            <h4 class="card-title netflix_color">Director review</h4>
                             <h5 class="card-text">Hideo Kojima</h5>
                             <h6 class="card-text text-muted">Hideo Kojima</h6>
                             <h6 class="card-text text-muted">Hideo Kojima</h6>
@@ -105,18 +117,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-8 align-items-stretch">
-            <div class="card mb-3 p-3">
-                <div class="row g-0">
-                    <div class="col">
-                        <div class="card-body">
-                            <h4 class="card-title netflix_color">Rating of other directors</h4>
-                            <canvas style="padding-bottom: 4rem;" id="BarChart"></canvas>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+
     </div>
     <div class="row my-4">
         <div class="col align-items-stretch">
@@ -131,16 +132,12 @@
                     </div>
                     <div class="col-md-4">
                         <div class="card-body">
-                            <h4 class="card-title netflix_color">Rating of other directors</h4>
-                            <p class="card-text">This is a wider card with supporting text below as a natural
-                                lead-in to additional content. This content is a little bit longer.</p>
+                            <canvas id="PieChartAge"></canvas>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="card-body">
-                            <h4 class="card-title netflix_color">Rating of other directors</h4>
-                            <p class="card-text">This is a wider card with supporting text below as a natural
-                                lead-in to additional content. This content is a little bit longer.</p>
+                            <canvas id="PieChartLanguage"></canvas>
                         </div>
                     </div>
                 </div>
@@ -158,6 +155,18 @@
         {{ data["genres"] | tojson}}
         var genres_data =
         {{ data["genres_data"]}}
+        var ages =
+        {{ data["ages"] | tojson}}
+        var ages_data =
+        {{ data["ages_data"] }}
+        var directors =
+        {{ data["directors"] | tojson}}
+        var directors_data =
+        {{ data["directors_data"] }}
+        var languages =
+        {{ data["languages"] | tojson}}
+        var languages_data =
+        {{ data["languages_data"] }}
     </script>
     <script src="{{ url_for('static',filename='Scripts/Netflix.js') }}"></script>
 {% endblock %}

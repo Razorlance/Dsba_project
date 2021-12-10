@@ -40,10 +40,30 @@ netflix_data['years_data'] = list(dict(sorted(netflix_years.items(), key=lambda 
 
 # Genres
 
-genres = list(itertools.chain(*list(Netflix_release["Genres"].dropna().apply(lambda x: x.split(",")))))
-netflix_data["genres"] = list(map(str, Counter(genres).keys()))
-netflix_data["genres_data"] = list(Counter(genres).values())
+Netflix_genres = list(itertools.chain(*list(Netflix_release["Genres"].dropna().apply(lambda x: x.split(",")))))
+Genres_info = dict(sorted(Counter(Netflix_genres).items(), key=lambda x: x[1], reverse=True))
+netflix_data["genres"] = list(Genres_info.keys())[:10:]
+netflix_data["genres"].append("Others")
+netflix_data["genres_data"] = list(Genres_info.values())[:10:]
+netflix_data["genres_data"].append(sum(list(Genres_info.values())[11::]))
 
+# Languages and age
+
+Netflix_ages = dict(Netflix_release["Age"].dropna().value_counts())
+netflix_data["ages"] = list(Netflix_ages.keys())
+netflix_data["ages_data"] = list(Netflix_ages.values())
+
+Netflix_languages = list(itertools.chain(*list(Netflix_release["Language"].dropna().apply(lambda x: x.split(",")))))
+Netflix_languages = dict(sorted(Counter(Netflix_languages).items(), key=lambda x: x[1], reverse=True))
+netflix_data["languages"] = list(Netflix_languages.keys())[:10:]
+netflix_data["languages_data"] = list(Netflix_languages.values())[:10:]
+
+# Directors
+
+Netflix_directors = list(itertools.chain(*list(Netflix_release["Directors"].dropna().apply(lambda x: x.split(",")))))
+Netflix_directors = dict(sorted(Counter(Netflix_directors).items(), key=lambda x: x[1], reverse=True))
+netflix_data["directors"] = list(Netflix_directors.keys())[:15:]
+netflix_data["directors_data"] = list(Netflix_directors.values())[:15:]
 # Hulu calculations
 
 # Disney calculations

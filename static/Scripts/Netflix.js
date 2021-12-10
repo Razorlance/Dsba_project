@@ -1,28 +1,7 @@
-const month_labels = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December'
-];
-
-const movie_labels = [
-    "Horror",
-    "Action",
-    "Comedy"
-]
-
 const line_data = {
     labels: years,
     datasets: [{
-        label: 'Number of movies during each year available on Netflix',
+        label: 'Number of movies of each year available on Netflix',
         backgroundColor: 'rgb(235, 35, 21,0.4)',
         borderColor: 'rgb(235, 35, 21)',
         data: years_data,
@@ -52,6 +31,49 @@ const pie_data = {
     }]
 };
 
+const pie_age_data = {
+    labels: ages,
+    datasets: [{
+        label: 'My First dataset',
+        backgroundColor: [
+            'rgba(255, 99, 132)',
+            'rgba(255, 159, 64)',
+            'rgba(255, 205, 86)',
+            'rgba(75, 192, 192)',
+            'rgba(54, 162, 235)',
+            'rgba(153, 102, 255)',
+            'rgba(201, 203, 207)'],
+        borderColor: 'rgb(235, 35, 21,0)',
+        data: ages_data,
+        fill: {
+            target: 'My First dataset',
+            above: 'rgb(255, 0, 0)',   // Area will be red above the origin
+            below: 'rgb(0, 0, 255)'
+        }
+    }]
+};
+const pie_language_data = {
+    labels: languages,
+    datasets: [{
+        label: 'My First dataset',
+        backgroundColor: [
+            'rgba(255, 99, 132)',
+            'rgba(255, 159, 64)',
+            'rgba(255, 205, 86)',
+            'rgba(75, 192, 192)',
+            'rgba(54, 162, 235)',
+            'rgba(153, 102, 255)',
+            'rgba(201, 203, 207)'],
+        borderColor: 'rgb(235, 35, 21,0)',
+        data: languages_data,
+        fill: {
+            target: 'My First dataset',
+            above: 'rgb(255, 0, 0)',   // Area will be red above the origin
+            below: 'rgb(0, 0, 255)'
+        }
+    }]
+};
+
 const configLine = {
     type: 'line',
     data: line_data,
@@ -66,19 +88,16 @@ const configPie = {
         plugins: {
             legend: {
                 position: 'top',
-            },
-            title: {
-                display: true,
             }
         }
     },
 };
 
 const bar_data = {
-    labels: month_labels,
+    labels: directors,
     datasets: [{
-        label: 'My First Dataset',
-        data: [65, 59, 80, 81, 56, 55, 40],
+        label: 'Number of movies for each director',
+        data: directors_data,
         backgroundColor: [
             'rgba(255, 99, 132)',
             'rgba(255, 159, 64)',
@@ -113,6 +132,56 @@ const configBar = {
     },
 };
 
+const configPieAge = {
+    type: 'doughnut',
+    data: pie_age_data,
+    options: {
+        responsive: true,
+        plugins: {
+            legend: {
+                position: 'top',
+            },
+            title: {
+                display: true,
+                text:"Age categories",
+                font:{
+                    size:20,
+
+                },
+                padding: {
+                    top: 5,
+                    bottom: 5
+                },
+                color:'rgb(235, 35, 21)'
+            }
+        }
+    },
+};
+
+const configPieLanguage = {
+    type: 'doughnut',
+    data: pie_language_data,
+    options: {
+        responsive: true,
+        plugins: {
+            legend: {
+                display:false,
+            },
+            title: {
+                display: true,
+                text:"Available languages",
+                font:{
+                    size:20,
+                },
+                padding: {
+                    top: 5,
+                    bottom: 5
+                },
+                color:'rgb(235, 35, 21)'
+            }
+        }
+    },
+};
 const PieChart = new Chart(
     document.getElementById('PieChart'),
     configPie
@@ -126,4 +195,14 @@ const LineChart = new Chart(
 const BarChart = new Chart(
     document.getElementById('BarChart'),
     configBar
+);
+
+const PieChartAge = new Chart(
+    document.getElementById('PieChartAge'),
+    configPieAge
+);
+
+const PieChartLanguage = new Chart(
+    document.getElementById('PieChartLanguage'),
+    configPieLanguage
 );

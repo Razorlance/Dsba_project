@@ -2,8 +2,8 @@ const line_data = {
     labels: years,
     datasets: [{
         label: 'Number of movies of each year available on Netflix',
-        backgroundColor: 'rgb(235, 35, 21,0.4)',
-        borderColor: 'rgb(235, 35, 21)',
+        backgroundColor: 'rgb(0, 163, 55,0.4)',
+        borderColor: 'rgb(0, 163, 55)',
         data: years_data,
         fill: true
     }]
@@ -14,14 +14,18 @@ const pie_data = {
     datasets: [{
         label: 'My First dataset',
         backgroundColor: [
-            'rgba(255, 99, 132)',
-            'rgba(255, 159, 64)',
-            'rgba(255, 205, 86)',
-            'rgba(75, 192, 192)',
-            'rgba(54, 162, 235)',
-            'rgba(153, 102, 255)',
-            'rgba(201, 203, 207)'],
-        borderColor: 'rgb(235, 35, 21,0)',
+            'rgb(0, 163, 55, 1)',
+            'rgb(0, 163, 55, 0.9)',
+            'rgb(0, 163, 55, 0.8)',
+            'rgb(0, 163, 55, 0.7)',
+            'rgb(0, 163, 55, 0.6)',
+            'rgb(0, 163, 55, 0.5)',
+            'rgb(0, 163, 55, 0.4)',
+            'rgb(0, 163, 55, 0.3)',
+            'rgb(0, 163, 55, 0.2)',
+            'rgb(0, 163, 55, 0.1)',
+            'rgb(0, 163, 55, 0.05)'],
+        borderColor: 'rgb(255,255, 255,0)',
         data: genres_data,
         fill: {
             target: 'My First dataset',
@@ -36,14 +40,17 @@ const pie_age_data = {
     datasets: [{
         label: 'My First dataset',
         backgroundColor: [
-            'rgba(255, 99, 132)',
-            'rgba(255, 159, 64)',
-            'rgba(255, 205, 86)',
-            'rgba(75, 192, 192)',
-            'rgba(54, 162, 235)',
-            'rgba(153, 102, 255)',
-            'rgba(201, 203, 207)'],
-        borderColor: 'rgb(235, 35, 21,0)',
+            'rgb(0, 163, 55, 1)',
+            'rgb(0, 163, 55, 0.8)',
+            'rgb(0, 163, 55, 0.6)',
+            'rgb(0, 163, 55, 0.4)',
+            'rgb(0, 163, 55, 0.2)',
+            'rgb(0, 163, 55, 0.5)',
+            'rgb(0, 163, 55, 0.4)',
+            'rgb(0, 163, 55, 0.3)',
+            'rgb(0, 163, 55, 0.2)',
+            'rgb(0, 163, 55, 0.1)'],
+        borderColor: 'rgb(0, 163, 55,0)',
         data: ages_data,
         fill: {
             target: 'My First dataset',
@@ -57,14 +64,17 @@ const pie_language_data = {
     datasets: [{
         label: 'My First dataset',
         backgroundColor: [
-            'rgba(255, 99, 132)',
-            'rgba(255, 159, 64)',
-            'rgba(255, 205, 86)',
-            'rgba(75, 192, 192)',
-            'rgba(54, 162, 235)',
-            'rgba(153, 102, 255)',
-            'rgba(201, 203, 207)'],
-        borderColor: 'rgb(235, 35, 21,0)',
+            'rgb(0, 163, 55, 1)',
+            'rgb(0, 163, 55, 0.9)',
+            'rgb(0, 163, 55, 0.8)',
+            'rgb(0, 163, 55, 0.7)',
+            'rgb(0, 163, 55, 0.6)',
+            'rgb(0, 163, 55, 0.5)',
+            'rgb(0, 163, 55, 0.4)',
+            'rgb(0, 163, 55, 0.3)',
+            'rgb(0, 163, 55, 0.2)',
+            'rgb(0, 163, 55, 0.1)'],
+        borderColor: 'rgb(0, 163, 55,0)',
         data: languages_data,
         fill: {
             target: 'My First dataset',
@@ -99,24 +109,11 @@ const bar_data = {
         label: 'Number of movies for each director',
         data: directors_data,
         backgroundColor: [
-            'rgba(255, 99, 132)',
-            'rgba(255, 159, 64)',
-            'rgba(255, 205, 86)',
-            'rgba(75, 192, 192)',
-            'rgba(54, 162, 235)',
-            'rgba(153, 102, 255)',
-            'rgba(201, 203, 207)'
+            'rgb(0, 163, 55,1)',
+            'rgb(0, 163, 55,0.7)',
+            'rgb(0, 163, 55,0.5)'
         ],
-        borderColor: [
-            'rgb(255, 99, 132)',
-            'rgb(255, 159, 64)',
-            'rgb(255, 205, 86)',
-            'rgb(75, 192, 192)',
-            'rgb(54, 162, 235)',
-            'rgb(153, 102, 255)',
-            'rgb(201, 203, 207)'
-        ],
-        borderWidth: 1
+        borderWidth: 0
     }]
 };
 
@@ -143,16 +140,16 @@ const configPieAge = {
             },
             title: {
                 display: true,
-                text:"Age categories",
-                font:{
-                    size:20,
+                text: "Age categories",
+                font: {
+                    size: 20,
 
                 },
                 padding: {
                     top: 5,
                     bottom: 5
                 },
-                color:'rgb(235, 35, 21)'
+                color: 'rgb(0, 163, 55)'
             }
         }
     },
@@ -165,19 +162,19 @@ const configPieLanguage = {
         responsive: true,
         plugins: {
             legend: {
-                display:false,
+                display: false,
             },
             title: {
                 display: true,
-                text:"Available languages",
-                font:{
-                    size:20,
+                text: "Available languages",
+                font: {
+                    size: 20,
                 },
                 padding: {
                     top: 5,
                     bottom: 5
                 },
-                color:'rgb(235, 35, 21)'
+                color: 'rgb(0, 163, 55)'
             }
         }
     },

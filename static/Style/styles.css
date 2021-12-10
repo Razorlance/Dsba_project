@@ -1,3 +1,6 @@
+.card-title{
+    color:#0d6efd;
+}
 .prime_color{
     color:#255ebd;
 }
@@ -5,11 +8,12 @@
     color:#eb2315;
 }
 .hulu_color{
-    color:#01cf47;
+    color:#00a337;
 }
 .disney_color{
     color:#7448a7;
 }
+
 .active{
 
 }

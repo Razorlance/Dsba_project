@@ -6,30 +6,30 @@
                 <div class="row g-0">
                     <div class="col-md-4">
                         <div class="card-body">
-                            <h4 class="card-title netflix_color">Netflix releases</h4>
+                            <h4 class="card-title hulu_color">Netflix movies release year</h4>
                             <p class="card-text">This is a wider card with supporting text below as a natural
                                 lead-in to additional content. This content is a little bit longer.</p>
                         </div>
                     </div>
                     <div class="col-md-8">
-                        <canvas class="py-4" id="LineChart"></canvas>
+                        <canvas style="padding-bottom: 20px;" id="LineChart"></canvas>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="row my-3">
+    <div class="row my-4">
         <div class="col">
             <div class="card p-3 text-center align-middle">
                 <div class="card-body align-middle">
-                    <h4 class="card-title netflix_color">Mean</h4>
+                    <h4 class="card-title hulu_color">Mean</h4>
                     <div class="big_number d-flex align-items-center justify-content-center">
                         <div class="m-4">
-                            <h5 class="fs-3">10</h5>
+                            <h5 class="fs-3">{{ data["imdb_mean"] }}/10</h5>
                             <h6 class="text-muted card-subtitle">IMdB rating</h6>
                         </div>
                         <div>
-                            <h5 class="fs-3">10</h5>
+                            <h5 class="fs-3">{{ data["RT_mean"] }}/100</h5>
                             <h6 class="text-muted card-subtitle">Rotten tomatoes rating</h6>
                         </div>
                     </div>
@@ -39,14 +39,14 @@
         <div class="col">
             <div class="card p-3 text-center">
                 <div class="card-body">
-                    <h4 class="card-title netflix_color">Median</h4>
+                    <h4 class="card-title hulu_color">Median</h4>
                     <div class="big_number d-flex align-items-center justify-content-center">
                         <div class="m-4">
-                            <h5 class="fs-3">10</h5>
+                            <h5 class="fs-3">{{ data["imdb_median"] }}/10</h5>
                             <h6 class="text-muted card-subtitle">IMdB rating</h6>
                         </div>
                         <div>
-                            <h5 class="fs-3">10</h5>
+                            <h5 class="fs-3">{{ data["RT_median"] }}/100</h5>
                             <h6 class="text-muted card-subtitle">Rotten tomatoes rating</h6>
                         </div>
                     </div>
@@ -56,14 +56,14 @@
         <div class="col">
             <div class="card p-3 text-center">
                 <div class="card-body">
-                    <h4 class="card-title netflix_color">Standard deviation</h4>
+                    <h4 class="card-title hulu_color">Standard deviation</h4>
                     <div class="big_number d-flex align-items-center justify-content-center">
                         <div class="m-4">
-                            <h5 class="fs-3">10</h5>
+                            <h5 class="fs-3">{{ data["imdb_std"] }}</h5>
                             <h6 class="text-muted card-subtitle">IMdB rating</h6>
                         </div>
                         <div>
-                            <h5 class="fs-3">10</h5>
+                            <h5 class="fs-3">{{ data["RT_std"] }}</h5>
                             <h6 class="text-muted card-subtitle">Rotten tomatoes rating</h6>
                         </div>
                     </div>
@@ -77,13 +77,68 @@
                 <div class="row g-0">
                     <div class="col-md-4">
                         <div class="card-body">
-                            <h4 class="card-title netflix_color">Netflix releases</h4>
+                            <h4 class="card-title hulu_color">Netflix genres</h4>
                             <p class="card-text">This is a wider card with supporting text below as a natural
                                 lead-in to additional content. This content is a little bit longer.</p>
                         </div>
                     </div>
                     <div class="col-md-8">
-                        <canvas class="py-4" id="PieChart"></canvas>
+                        <canvas style="padding: 25px;" id="PieChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row my-4">
+        <div class="col-md-8 align-items-stretch">
+            <div class="card mb-3 p-3">
+                <div class="row g-0">
+                    <div class="col">
+                        <div class="card-body">
+                            <h4 class="card-title hulu_color">Popular directors</h4>
+                            <canvas style="padding-bottom: 4rem;" id="BarChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 align-items-stretch">
+            <div class="card mb-3 p-3">
+                <div class="row g-0">
+                    <div class="col">
+                        <div class="card-body">
+                            <h4 class="card-title hulu_color">Director review</h4>
+                            <h5 class="card-text">Hideo Kojima</h5>
+                            <h6 class="card-text text-muted">Hideo Kojima</h6>
+                            <h6 class="card-text text-muted">Hideo Kojima</h6>
+                            <h6 class="card-text text-muted">Hideo Kojima</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row my-4">
+        <div class="col align-items-stretch">
+            <div class="card mb-3 p-3">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <div class="card-body">
+                            <h4 class="card-title hulu_color">Rating of other directors</h4>
+                            <p class="card-text">This is a wider card with supporting text below as a natural
+                                lead-in to additional content. This content is a little bit longer.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card-body">
+                            <canvas id="PieChartAge"></canvas>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card-body">
+                            <canvas id="PieChartLanguage"></canvas>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -91,5 +146,27 @@
     </div>
 {% endblock %}
 {% block script %}
-    <script src="{{ url_for('static',filename='Scripts/index.js') }}"></script>
+    <script>
+        var years =
+        {{ data["years"] }}
+        var years_data =
+        {{ data["years_data"] }}
+        var genres =
+        {{ data["genres"] | tojson}}
+        var genres_data =
+        {{ data["genres_data"]}}
+        var ages =
+        {{ data["ages"] | tojson}}
+        var ages_data =
+        {{ data["ages_data"] }}
+        var directors =
+        {{ data["directors"] | tojson}}
+        var directors_data =
+        {{ data["directors_data"] }}
+        var languages =
+        {{ data["languages"] | tojson}}
+        var languages_data =
+        {{ data["languages_data"] }}
+    </script>
+    <script src="{{ url_for('static',filename='Scripts/Hulu.js') }}"></script>
 {% endblock %}

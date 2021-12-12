@@ -62,14 +62,6 @@ Netflix_directors = dict(sorted(Counter(Netflix_directors).items(), key=lambda x
 netflix_data["directors"] = list(Netflix_directors.keys())[:15:]
 netflix_data["directors_data"] = list(Netflix_directors.values())[:15:]
 
-# Hulu calculations
-
-# Hulu_data = data[data["Hulu"] == 1]
-
-# Disney calculations
-
-# Disney_data = data[data["Disney+"] == 1]
-
 # Amazon Prime calculations
 
 Prime_data = data[data["Prime Video"] == 1]

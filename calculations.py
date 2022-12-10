@@ -27,9 +27,12 @@ st.subheader("Netflix")
 
 # In[143]:
 
-
+st.code('''Netflix_data = data[data["Netflix"] == 1]
+Netflix_data["IMDb"].apply(lambda x: float(str(x)[:3])).mean().round(3)
+Netflix_data["IMDb"].apply(lambda x: float(str(x)[:3])).median()
+Netflix_data["IMDb"].apply(lambda x: float(str(x)[:3])).std().round(3)
+''')
 Netflix_data = data[data["Netflix"] == 1]
-
 st.subheader("IMdB")
 
 # In[144]:
@@ -50,7 +53,10 @@ Netflix_data["IMDb"].apply(lambda x: float(str(x)[:3])).std().round(3)
 st.subheader("Rotten Tomatoes")
 
 # In[147]:
-
+st.code('''Netflix_data["Rotten Tomatoes"].dropna().apply(lambda x: float(str(x)[:2])).std().round(3)
+Netflix_data["Rotten Tomatoes"].dropna().apply(lambda x: float(str(x)[:2])).mean().round(3)
+Netflix_data["Rotten Tomatoes"].dropna().apply(lambda x: float(str(x)[:2])).median()
+''')
 
 Netflix_data["Rotten Tomatoes"].dropna().apply(lambda x: float(str(x)[:2])).std().round(3)
 

@@ -18,7 +18,7 @@ import itertools
 orginal_data = pd.read_csv('data.csv', sep=',')
 data = orginal_data.copy(deep=True)
 
-st.subheader("Calculations")
+st.sheader("Calculations")
 # 
 st.markdown(
     "Following calculation will be provided for Netflix data. Same formulas were used to calculate data for other platforms and can be found in *calculations.py* inside the project.")

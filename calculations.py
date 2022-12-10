@@ -25,19 +25,20 @@ st.markdown(
 
 st.subheader("Netflix")
 
+
 # In[143]:
 
-st.code('''Netflix_data = data[data["Netflix"] == 1]
-Netflix_data["IMDb"].apply(lambda x: float(str(x)[:3])).mean().round(3)
-Netflix_data["IMDb"].apply(lambda x: float(str(x)[:3])).median()
-Netflix_data["IMDb"].apply(lambda x: float(str(x)[:3])).std().round(3)
-''')
+
 Netflix_data = data[data["Netflix"] == 1]
+st.code('''Netflix_data = data[data["Netflix"] == 1]''')
 st.subheader("IMdB")
 
 # In[144]:
 
-
+st.code('''Netflix_data["IMDb"].apply(lambda x: float(str(x)[:3])).mean().round(3)
+Netflix_data["IMDb"].apply(lambda x: float(str(x)[:3])).median()
+Netflix_data["IMDb"].apply(lambda x: float(str(x)[:3])).std().round(3)
+''')
 Netflix_data["IMDb"].apply(lambda x: float(str(x)[:3])).mean().round(3)
 
 # In[145]:

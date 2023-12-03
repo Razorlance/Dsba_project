@@ -5,7 +5,7 @@ Project was created by **Kulakov Denis**
 ## Group DSBA212-1
 
 ### Link to the project
-https://dsba-project-example.streamlit.app/ - streamlit
+https://dsba-project-example.streamlit.app/ - Streamlit <br>
 https://dsba-project-example.onrender.com/ - Flask example
 
 ### Data set: 

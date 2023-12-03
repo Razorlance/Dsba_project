@@ -5,7 +5,8 @@ Project was created by **Kulakov Denis**
 ## Group DSBA212-1
 
 ### Link to the project
-https://dsbaproject-production.up.railway.app/Disney
+https://dsba-project-example.streamlit.app/ - streamlit
+https://dsba-project-example.onrender.com/ - Flask example
 
 ### Data set: 
 https://www.kaggle.com/ruchi798/movies-on-netflix-prime-video-hulu-and-disney
